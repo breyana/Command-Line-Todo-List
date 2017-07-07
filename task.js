@@ -11,7 +11,6 @@ switch(command) {
     break;
 
   case "list":
-    const tasks = fs.readFileSync('./tasks.json', 'utf8')
-    console.log(tasks)
+    list()
     break;
 }
