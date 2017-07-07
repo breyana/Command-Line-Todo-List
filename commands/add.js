@@ -2,6 +2,10 @@ const fs = require('fs')
 const tasks = JSON.parse(fs.readFileSync('./tasks.json', 'utf8'))
 
 const add = (newTask) => {
+  if (!newTask) {
+    console.warn("Please add a task name")
+    return
+  }
   let toDo = {}
   const id = () => tasks.length !== 0 ? tasks[tasks.length - 1].id + 1 : 1
   toDo.id = id()
