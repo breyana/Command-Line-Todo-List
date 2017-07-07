@@ -1,5 +1,7 @@
 const fs = require('fs')
-const tasks = JSON.parse(fs.readFileSync('./tasks.json', 'utf8'))
+const readTasks = require('../readTasks.js')
+
+const tasks = readTasks()
 
 const list = () => {
   const longestID = Math.max.apply(null, tasks.map(task => task.id.toString().length))
