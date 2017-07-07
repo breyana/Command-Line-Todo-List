@@ -1,1 +1,17 @@
-const add = require('./commands/add.js')
+const fs = require('fs')
+const add = require('./commands/add')
+const list = require('./commands/list')
+
+const command = process.argv[2]
+const string = process.argv[3]
+
+switch(command) {
+  case "add":
+    add(string)
+    break;
+
+  case "list":
+    const tasks = fs.readFileSync('./tasks.json', 'utf8')
+    console.log(tasks)
+    break;
+}
