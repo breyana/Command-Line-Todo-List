@@ -4,11 +4,11 @@ const list = require('./commands/list')
 const done = require('./commands/done')
 
 const command = process.argv[2]
-const string = process.argv[3]
+const argument = process.argv[3]
 
 switch(command) {
   case "add":
-    add(string)
+    add(argument)
     break;
 
   case "list":
@@ -16,5 +16,5 @@ switch(command) {
     break;
 
   case "done":
-    done(string)
+    done(argument)
 }
