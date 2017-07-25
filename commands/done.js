@@ -12,8 +12,6 @@ const done = (num) => {
   }
   tasks.splice(index, 1)
   fs.writeFileSync('./tasks.json', JSON.stringify(tasks));
-
-
 }
 
 module.exports = done
