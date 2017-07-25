@@ -5,8 +5,7 @@ const tasks = readTasks()
 
 const list = () => {
   const widestIDString = Math.max.apply(null, tasks.map(task => task.id.toString().length))
-
-  if (widestIDString === 0) {
+  if (widestIDString <= 0) {
     console.log("There are no tasks.")
     return
   }
