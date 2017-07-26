@@ -10,7 +10,9 @@ const done = (num) => {
       console.log('ID ' + num + ' does not exist')
     }
     tasks.splice(index, 1)
-    fs.writeFileSync('./tasks.json', JSON.stringify(tasks));
+    fs.writeFile('./tasks.json', JSON.stringify(tasks), (err) => {
+      if (err) throw err
+    })
   })
 }
 

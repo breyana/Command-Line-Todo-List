@@ -13,7 +13,9 @@ const add = (newTask) => {
     toDo.task = newTask
     tasks.push(toDo)
     console.log(`Created task ${toDo.id}.`)
-    fs.writeFileSync('./tasks.json', JSON.stringify(tasks))
+    fs.writeFile('./tasks.json', JSON.stringify(tasks), (err) => {
+      if (err) throw err;
+    })
   })
 }
 
