@@ -19,4 +19,8 @@ switch(command) {
 
   case "done":
     done(argument)
+    break;
+
+  default:
+    console.log("Invalid command, use \"add\", \"list\", or \"done\"")
 }
