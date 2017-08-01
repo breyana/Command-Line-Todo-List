@@ -2,7 +2,6 @@ const fs = require('fs')
 const readTasks = require('../readTasks.js')
 
 const list = () => {
-  console.log("List is being called")
   readTasks((tasks) => {
     const widestIDString = Math.max.apply(null, tasks.map(task => task.id.toString().length))
 
