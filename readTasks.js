@@ -1,7 +1,10 @@
 const fs = require('fs')
 
-function readTasks() {
-  return JSON.parse(fs.readFileSync('./tasks.json', 'utf8'))
+function readTasks(callback) {
+  fs.readFile('./tasks.json', 'utf8', (error, data) => {
+    const tasks = JSON.parse(data)
+    callback(tasks)
+  })
 }
 
 module.exports = readTasks
